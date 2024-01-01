@@ -1,0 +1,16 @@
+version: "3.9"
+services: 
+  thrift_api:
+    image: thrift_api
+    build: .
+    container_name: thrift_api_application
+    ports:
+      - "5052:80"
+  sql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    container_name: sql_server2022
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=A&VeryComplex123Password
