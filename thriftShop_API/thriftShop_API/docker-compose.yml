@@ -14,3 +14,5 @@ services:
     environment:
       - ACCEPT_EULA=y
       - SA_PASSWORD=A&VeryComplex123Password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
